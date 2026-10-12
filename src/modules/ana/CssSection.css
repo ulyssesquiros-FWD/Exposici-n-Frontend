@@ -1,0 +1,547 @@
+.ana-css {
+  --ana-surface: #111827;
+  --ana-surface-raised: #1f2937;
+  --ana-border: rgba(148, 163, 184, 0.28);
+  --ana-text: #f8fafc;
+  --ana-muted: #cbd5e1;
+  --ana-accent: #67e8f9;
+  --ana-purple: #c4b5fd;
+  --ana-radius: 1rem;
+  --ana-space: clamp(1rem, 2vw, 1.5rem);
+
+  color: var(--ana-text);
+  padding: clamp(2rem, 5vw, 4rem) 0;
+}
+
+.ana-css__inner {
+  width: min(100% - 2rem, 72rem);
+  margin-inline: auto;
+}
+
+.ana-css__hero {
+  max-width: 52rem;
+  margin-bottom: clamp(2.5rem, 6vw, 4.5rem);
+}
+
+.ana-css__eyebrow {
+  color: var(--ana-accent);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.65rem;
+  text-transform: uppercase;
+}
+
+.ana-css h1,
+.ana-css h2,
+.ana-css h3,
+.ana-css h4,
+.ana-css p {
+  margin: 0;
+}
+
+.ana-css h1,
+.ana-css h2,
+.ana-css h3,
+.ana-css h4 {
+  color: var(--ana-text);
+  font-family: var(--font-display, var(--font-main, sans-serif));
+  line-height: 1.25;
+}
+
+.ana-css h1 {
+  font-size: clamp(2.25rem, 6vw, 4rem);
+  letter-spacing: -0.04em;
+  max-width: 14ch;
+}
+
+.ana-css h2 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  letter-spacing: -0.025em;
+}
+
+.ana-css h3 {
+  font-size: 1.1rem;
+}
+
+.ana-css h4 {
+  font-size: 1rem;
+}
+
+.ana-css__lead {
+  color: var(--ana-muted);
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  line-height: 1.7;
+  margin-top: 1.1rem !important;
+  max-width: 43rem;
+}
+
+.ana-css__lesson {
+  margin-top: clamp(2.75rem, 6vw, 4.5rem);
+}
+
+.ana-css__section-heading {
+  align-items: end;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: space-between;
+  margin-bottom: 1.35rem;
+}
+
+.ana-css__section-heading > p {
+  color: var(--ana-muted);
+  max-width: 19rem;
+  padding-bottom: 0.15rem;
+}
+
+.ana-css__two-column,
+.ana-css__layout-comparison {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.ana-css__panel,
+.ana-css__box-explanation,
+.ana-css__responsive-panel {
+  background: var(--ana-surface);
+  border: 1px solid var(--ana-border);
+  border-radius: var(--ana-radius);
+  min-width: 0;
+  padding: var(--ana-space);
+}
+
+.ana-css__panel > p,
+.ana-css__box-explanation > p,
+.ana-css__responsive-copy > p {
+  color: var(--ana-muted);
+  line-height: 1.65;
+  margin-top: 0.65rem;
+}
+
+.ana-css code {
+  color: #e0e7ff;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.92em;
+  overflow-wrap: anywhere;
+}
+
+.ana-css__code {
+  background: #080d18;
+  border: 1px solid rgba(148, 163, 184, 0.24);
+  border-radius: 0.7rem;
+  color: #e2e8f0;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.8rem;
+  line-height: 1.65;
+  margin-top: 1rem;
+  max-width: 100%;
+  overflow-x: auto;
+  padding: 0.9rem 1rem;
+  tab-size: 2;
+  white-space: pre;
+}
+
+.ana-css__note {
+  color: var(--ana-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-top: 0.9rem !important;
+}
+
+.ana-css__box-layout {
+  align-items: center;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(0, 1.1fr) minmax(16rem, 0.9fr);
+}
+
+.ana-css__box-demo {
+  background: var(--ana-surface);
+  border: 1px solid var(--ana-border);
+  border-radius: var(--ana-radius);
+  min-width: 0;
+  padding: clamp(0.75rem, 3vw, 1.5rem);
+}
+
+.ana-css__box-margin {
+  background: rgba(196, 181, 253, 0.1);
+  border: 1px dashed #c4b5fd;
+  border-radius: 0.8rem;
+  padding: clamp(0.75rem, 3vw, 1.25rem);
+}
+
+.ana-css__box-border {
+  background: rgba(103, 232, 249, 0.12);
+  border: 3px solid var(--ana-accent);
+  border-radius: 0.6rem;
+  padding: clamp(0.65rem, 2.5vw, 1rem);
+}
+
+.ana-css__box-padding {
+  background: rgba(245, 158, 11, 0.14);
+  border: 1px dashed #fbbf24;
+  border-radius: 0.45rem;
+  padding: clamp(0.7rem, 3vw, 1.2rem);
+}
+
+.ana-css__box-label {
+  color: var(--ana-muted);
+  display: block;
+  font-size: clamp(0.66rem, 1.5vw, 0.8rem);
+  margin-bottom: 0.55rem;
+  overflow-wrap: anywhere;
+}
+
+.ana-css__box-content {
+  align-items: center;
+  background: #253247;
+  border-radius: 0.35rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 0.8rem;
+  justify-content: space-between;
+  padding: 0.8rem;
+}
+
+.ana-css__box-content strong {
+  color: var(--ana-text);
+}
+
+.ana-css__box-content span {
+  color: var(--ana-muted);
+  font-size: 0.85rem;
+}
+
+.ana-css__box-explanation {
+  background: transparent;
+  border: 0;
+  padding: 0.5rem 0;
+}
+
+.ana-css__box-explanation .ana-css__code {
+  white-space: pre-wrap;
+}
+
+.ana-css__panel-title {
+  align-items: start;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.ana-css__panel-title p {
+  color: var(--ana-muted);
+  line-height: 1.55;
+  margin-top: 0.45rem;
+}
+
+.ana-css__tag {
+  background: rgba(103, 232, 249, 0.1);
+  border: 1px solid rgba(103, 232, 249, 0.35);
+  border-radius: 999px;
+  color: #a5f3fc;
+  flex: 0 0 auto;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.3rem 0.6rem;
+}
+
+.ana-css__flex-demo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1.1rem;
+}
+
+.ana-css__product-card {
+  background: var(--ana-surface-raised);
+  border: 1px solid var(--ana-border);
+  border-radius: 0.8rem;
+  flex: 1 1 9rem;
+  min-width: 0;
+  padding: 0.9rem;
+  transition: border-color 160ms ease, transform 160ms ease;
+}
+
+.ana-css__product-card:hover {
+  border-color: var(--ana-accent);
+  transform: translateY(-2px);
+}
+
+.ana-css__product-mark {
+  align-items: center;
+  background: rgba(196, 181, 253, 0.14);
+  border-radius: 0.55rem;
+  color: var(--ana-purple);
+  display: inline-flex;
+  height: 2rem;
+  justify-content: center;
+  margin-bottom: 0.65rem;
+  width: 2rem;
+}
+
+.ana-css__product-card p {
+  color: var(--ana-muted);
+  font-size: 0.85rem;
+  line-height: 1.45;
+  margin-top: 0.3rem;
+  min-height: 2.5em;
+}
+
+.ana-css__product-card > strong {
+  color: #a5f3fc;
+  display: inline-block;
+  margin-top: 0.7rem;
+}
+
+.ana-css__grid-demo {
+  display: grid;
+  gap: 0.55rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 1.1rem;
+}
+
+.ana-css__grid-cell {
+  background: var(--ana-surface-raised);
+  border: 1px solid rgba(196, 181, 253, 0.36);
+  border-radius: 0.65rem;
+  min-width: 0;
+  padding: 0.7rem;
+}
+
+.ana-css__grid-cell strong,
+.ana-css__grid-cell span {
+  display: block;
+  overflow-wrap: anywhere;
+}
+
+.ana-css__grid-cell strong {
+  font-size: 0.85rem;
+}
+
+.ana-css__grid-cell span {
+  color: var(--ana-muted);
+  font-size: 0.68rem;
+  line-height: 1.4;
+  margin-top: 0.25rem;
+}
+
+.ana-css__responsive-panel {
+  align-items: center;
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  grid-template-columns: minmax(0, 1fr) minmax(15rem, 0.9fr);
+}
+
+.ana-css__responsive-copy {
+  min-width: 0;
+}
+
+.ana-css__preview {
+  background: #080d18;
+  border: 1px solid var(--ana-border);
+  border-radius: 0.9rem;
+  min-width: 0;
+  overflow: hidden;
+  padding: 0.85rem;
+  transition: max-width 220ms ease;
+}
+
+.ana-css__preview--mobile {
+  justify-self: center;
+  max-width: 18rem;
+  width: 100%;
+}
+
+.ana-css__preview-bar {
+  align-items: center;
+  border-bottom: 1px solid var(--ana-border);
+  display: flex;
+  gap: 0.35rem;
+  padding-bottom: 0.75rem;
+}
+
+.ana-css__preview-bar > span {
+  background: #64748b;
+  border-radius: 50%;
+  height: 0.45rem;
+  width: 0.45rem;
+}
+
+.ana-css__preview-bar > strong {
+  color: var(--ana-muted);
+  font-size: 0.7rem;
+  font-weight: 500;
+  margin-left: auto;
+}
+
+.ana-css__preview-cards {
+  display: grid;
+  gap: 0.6rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  padding-top: 0.75rem;
+}
+
+.ana-css__preview--mobile .ana-css__preview-cards {
+  grid-template-columns: 1fr;
+}
+
+.ana-css__preview-card {
+  background: var(--ana-surface-raised);
+  border: 1px solid var(--ana-border);
+  border-radius: 0.65rem;
+  min-width: 0;
+  padding: 0.75rem;
+}
+
+.ana-css__preview-card > span {
+  color: var(--ana-accent);
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.ana-css__preview-card > strong {
+  display: block;
+  margin-top: 0.25rem;
+}
+
+.ana-css__preview-card p {
+  color: var(--ana-muted);
+  font-size: 0.8rem;
+  line-height: 1.45;
+  margin-top: 0.25rem;
+}
+
+.ana-css__preview-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.ana-css__control {
+  background: var(--ana-surface-raised);
+  border: 1px solid var(--ana-border);
+  border-radius: 0.65rem;
+  color: var(--ana-text);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 650;
+  padding: 0.65rem 0.9rem;
+  transition: background-color 150ms ease, border-color 150ms ease;
+}
+
+.ana-css__control:hover,
+.ana-css__control[aria-pressed='true'] {
+  background: #263b52;
+  border-color: var(--ana-accent);
+}
+
+.ana-css__control:focus-visible {
+  outline: 3px solid #fbbf24;
+  outline-offset: 3px;
+}
+
+.ana-css__takeaway {
+  align-items: center;
+  background: rgba(103, 232, 249, 0.07);
+  border: 1px solid rgba(103, 232, 249, 0.28);
+  border-radius: var(--ana-radius);
+  display: flex;
+  gap: 1rem;
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  padding: var(--ana-space);
+}
+
+.ana-css__takeaway-mark {
+  align-items: center;
+  background: rgba(103, 232, 249, 0.15);
+  border-radius: 0.75rem;
+  color: #a5f3fc;
+  display: inline-flex;
+  flex: 0 0 auto;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.85rem;
+  font-weight: 700;
+  justify-content: center;
+  min-height: 2.8rem;
+  min-width: 3.5rem;
+}
+
+.ana-css__takeaway p {
+  color: var(--ana-muted);
+  line-height: 1.6;
+}
+
+@media (max-width: 48rem) {
+  .ana-css__section-heading {
+    align-items: start;
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+
+  .ana-css__section-heading > p {
+    max-width: 34rem;
+  }
+
+  .ana-css__two-column,
+  .ana-css__layout-comparison,
+  .ana-css__responsive-panel {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .ana-css__box-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .ana-css__box-explanation {
+    padding: 0.5rem 0.25rem;
+  }
+}
+
+@media (max-width: 38rem) {
+  .ana-css__inner {
+    width: min(100% - 1.25rem, 72rem);
+  }
+
+  .ana-css__grid-demo {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ana-css__panel-title {
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+
+  .ana-css__tag {
+    align-self: start;
+  }
+
+  .ana-css__takeaway {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 22rem) {
+  .ana-css__grid-demo,
+  .ana-css__preview-cards {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .ana-css__code {
+    font-size: 0.72rem;
+    padding-inline: 0.7rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ana-css *,
+  .ana-css *::before,
+  .ana-css *::after {
+    scroll-behavior: auto;
+    transition-duration: 0.01ms;
+  }
+}
