@@ -1,62 +1,32 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { HomePage } from '../pages/HomePage';
+import { PresentationPage } from '../pages/PresentationPage';
 import { ProjectsMapPage } from '../pages/ProjectsMapPage';
 import { DocsViewerPage } from '../pages/DocsViewerPage';
+import HtmlApiSection from '../modules/caleb/HtmlApiSection';
+import CssSection from '../modules/ana/CssSection';
 import JavaScriptSection from '../modules/ulysses/JavaScriptSection';
-import { SectionPlaceholder } from '../components/SectionPlaceholder';
 
 export const AppRoutes = () => {
   return (
     <Routes>
+      {/* 1. Portada de la exposición */}
       <Route path="/" element={<HomePage />} />
 
-      {/* Módulo de Ulysses integrado activamente en su rama feature/ulysses-javascript */}
+      {/* 2. Modo de exposición guiada (8-10 min) */}
+      <Route path="/presentacion" element={<PresentationPage />} />
+
+      {/* 3. Módulos individuales integrados */}
+      <Route path="/seccion/html-api" element={<HtmlApiSection />} />
+      <Route path="/seccion/css" element={<CssSection />} />
       <Route path="/seccion/javascript" element={<JavaScriptSection />} />
 
-      {/* Marcador desacoplado para el módulo de Ana */}
-      <Route
-        path="/seccion/ana"
-        element={
-          <SectionPlaceholder
-            author="Ana"
-            sectionTitle="Estructura, Semántica & Experiencia de Usuario"
-            expectedBranch="feature/ana-estructura"
-            expectedModulePath="src/modules/ana/"
-            description="Espacio reservado para el módulo de estructura y maquetación de Ana. Se integrará automáticamente a través de su Pull Request hacia main."
-            topics={[
-              'Semántica HTML5',
-              'Accesibilidad Web (a11y)',
-              'Layouts Flexbox y CSS Grid',
-              'Diseño Responsivo',
-              'Estándares de Maquetación'
-            ]}
-          />
-        }
-      />
+      {/* Rutas de alias para compatibilidad retroactiva */}
+      <Route path="/seccion/caleb" element={<Navigate to="/seccion/html-api" replace />} />
+      <Route path="/seccion/ana" element={<Navigate to="/seccion/css" replace />} />
 
-      {/* Marcador desacoplado para el módulo de Caleb */}
-      <Route
-        path="/seccion/caleb"
-        element={
-          <SectionPlaceholder
-            author="Caleb"
-            sectionTitle="Control de Versiones, Arquitectura & Git"
-            expectedBranch="feature/caleb-arquitectura"
-            expectedModulePath="src/modules/caleb/"
-            description="Espacio reservado para el módulo de arquitectura y flujos de Git de Caleb. Se integrará automáticamente a través de su Pull Request hacia main."
-            topics={[
-              'Estrategia de Ramas en Git',
-              'Resolución de Conflictos',
-              'Commits Convencionales',
-              'Flujo de Pull Requests',
-              'Automatización y Vite Build'
-            ]}
-          />
-        }
-      />
-
-      {/* Rutas de apoyo y documentación */}
+      {/* 4. Mapa de aprendizajes del curso y documentación */}
       <Route path="/proyectos" element={<ProjectsMapPage />} />
       <Route path="/documentacion" element={<DocsViewerPage />} />
 

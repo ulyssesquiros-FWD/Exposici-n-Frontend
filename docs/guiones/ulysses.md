@@ -1,92 +1,85 @@
 # Guion de Intervención Oral: Ulysses Quirós
 
 **Expositor:** Ulysses Quirós  
-**Tema:** JavaScript, Interactividad, el Modelo Declarativo de React e Integración  
-**Duración Estimada:** 3:00 minutos exactos (con margen de preguntas)  
-**Objetivo Pedagógico:** Demostrar dominio conceptual y práctico de la interactividad en Front End conectando la teoría con los 9 proyectos reales del curso.
+**Temas:** Apertura Grupal, JavaScript e Interactividad, Modelo Declarativo de React y Cierre  
+**Duración Total Asignada en la Exposición Grupal:** ~3:20 minutos (dentro de los 9:05 min totales del trío)  
+**Objetivo Pedagógico:** Demostrar dominio conceptual y práctico de la interactividad en Front End conectando la teoría funcional con los 9 proyectos reales del curso.
 
 ---
 
-## ⏱️ Estructura Temporal de la Presentación (3:00 min)
+## ⏱️ Distribución Temporal en la Presentación Grupal
 
 ```text
-[0:00 - 0:40] Apertura e Introducción a JavaScript
-[0:40 - 1:40] Demostración en Vivo: De la Manipulación del DOM a React Declarativo
-[1:40 - 2:30] Arquitectura en Proyectos Reales: Hooks, Rutas Protegidas y Pruebas
-[2:30 - 3:00] Dificultad Real, Lección Aprendida y Cierre
+[0:00 - 0:30]  Bloque 1: Apertura y Objetivo Común del Equipo (0:30 min)
+[4:10 - 5:30]  Bloque 5: JavaScript: Variables, Funciones Puras y DOM (1:20 min)
+[5:30 - 6:40]  Bloque 6: React: Componentes, Estado, .map() y Hooks (1:10 min)
+[8:05 - 8:25]  Bloque 8: Buenas Prácticas y Dificultad Real (0:20 min)
 ```
 
 ---
 
-## 🎤 Guion Palabra por Palabra
+## 🎤 Intervenciones Palabra por Palabra
 
-### [0:00 - 0:40] 1. Apertura e Introducción a JavaScript
-> *"Buenos días profesor y compañeros. Mi nombre es Ulysses Quirós, y hoy les presentaré el corazón interactivo de nuestras aplicaciones: JavaScript y su transición hacia el modelo declarativo de React.*
+### [0:00 - 0:30] Bloque 1: Apertura y Objetivo Común
+> *"Buenos días profesor y compañeros. Sean bienvenidos a la exposición integradora de Front End de nuestro equipo, conformado por Ana, Caleb y mi persona, Ulysses Quirós.*
 > 
-> *A lo largo del curso comprendimos que mientras HTML provee la estructura y CSS la estética, JavaScript es el motor que dota de inteligencia y reactividad a la interfaz. Sin embargo, escribir JavaScript moderno no significa simplemente añadir eventos dispersos; significa trabajar con inmutabilidad, funciones puras y arquitecturas predecibles que escalen sin romperse."*
+> *A lo largo de este curso no aprendimos tecnologías aisladas, sino los eslabones de una misma cadena: cómo partir de una estructura semántica accesible en HTML, transformarla en una interfaz visualmente armónica y responsiva con CSS, darle dinamismo reactivo con JavaScript y React, y finalmente conectarla al mundo real consumiendo APIs REST asíncronas.*
+> 
+> *Para comenzar con el cimiento estructural de cualquier aplicación web, le cedo la palabra a mi compañero Caleb."*
 
 ---
 
-### [0:40 - 1:40] 2. Demostración en Vivo: Del DOM Imperativo a React Declarativo
-*(Ulysses navega en la pantalla a la pestaña 1 del Taller Interactivo y hace clic en "Disparar Interacción" y luego escribe en el filtro de búsqueda).*
+### [4:10 - 5:30] Bloque 5: JavaScript: Variables, Funciones Puras y DOM
+*(Ulysses retoma la palabra tras la sección de CSS de Ana).*
 
-> *"Para demostrar esto de manera tangible, observemos esta demostración en vivo. En JavaScript tradicional —como implementamos al inicio en el proyecto **LoginMaster**— cada cambio requería buscar manualmente un elemento con `querySelector`, modificar sus clases y sincronizar el DOM a mano. Esto genera errores frecuentes cuando la interfaz crece.*
+> *"Muchas gracias, Ana. Llegamos al motor de la interactividad: JavaScript moderno.*
 > 
-> *En cambio, aquí en React vemos el paradigma declarativo: no tocamos el DOM directamente. Cuando escribo en este buscador o presiono un botón, modifico un estado mediante `useState`. React toma esa nueva fotografía de los datos, aplica programación funcional con métodos inmutables como `.filter()` y proyecta los resultados con `.map()` utilizando `keys` únicas. Y si no hay coincidencias, un operador ternario renderiza instantáneamente un estado vacío amigable, sin necesidad de bucles tradicionales ni manipulaciones frágiles."*
+> *Para construir aplicaciones sólidas, desterramos el uso de `var` y adoptamos `const` para referencias inmutables y `let` para bloques de alcance estricto. Pero el verdadero salto cualitativo ocurre al adoptar la **programación funcional**: trabajamos con funciones puras que, ante los mismos argumentos, siempre retornan la misma salida sin generar efectos secundarios.*
+> 
+> *La regla de oro es la **inmutabilidad**. En proyectos tempranos o en JavaScript tradicional, era común mutar arreglos directamente con `gastos.push(nuevo)`. En interfaces modernas esto es una mala práctica porque rompe la predictibilidad.*
+> 
+> *En lugar de manipular imperativamente el DOM buscando elementos con `document.getElementById` o alterando `textContent` a mano —como hacíamos al inicio en proyectos como **LoginMaster**—, aprendimos que la manipulación manual del DOM es frágil y costosa en rendimiento. Por eso dimos el paso definitivo hacia el paradigma declarativo de React."*
 
 ---
 
-### [1:40 - 2:30] 3. Arquitectura en Proyectos Reales: Hooks, Rutas y Testing
-*(Ulysses muestra brevemente la pestaña 3 y 4 del taller).*
-
-> *"Esta misma lógica fue la que aplicamos en los proyectos más avanzados del curso:*
-> * En **Rick and Morty** y en la **Automatización climática**, encapsulamos llamadas asíncronas en hooks personalizados como `useClimateAutomation`, gestionando con elegancia los tres estados críticos: carga, error y datos.
-> * En **Moka & Canela**, usamos `useContext` para mantener sincronizado el carrito de compras a lo largo de todo el flujo de compra sin 'prop drilling'.
-> * En **Rutas priv**, diseñamos un componente guard `PrivateRoutes` que protege pantallas confidenciales redirigiendo al login si no existe una sesión válida en `localStorage`.
-> * Y finalmente, aseguramos la calidad mediante pruebas unitarias en **test 3** con Vitest y React Testing Library, testeando el comportamiento del usuario mediante roles semánticos y no clases CSS."*
+### [5:30 - 6:40] Bloque 6: React: Componentes, Estado, .map() y Hooks
+> *"En React, la interfaz es una función matemática del estado: `UI = f(State)`. Nosotros no le decimos al navegador paso a paso qué nodo pintar; simplemente describimos la interfaz que corresponde al estado actual, y el algoritmo de reconciliación de React actualiza el Virtual DOM con máxima eficiencia.*
+> 
+> *Aquí la programación funcional brilla: utilizamos `.filter()` para búsquedas reactivas en tiempo real sin alterar los datos originales, y transformamos colecciones con `.map()`, asignando obligatoriamente una prop `key` única para que React identifique qué elemento cambió o se eliminó.*
+> 
+> *Si una búsqueda no arroja resultados, usamos operadores ternarios (`condicion ? <Exito /> : <Vacio />`) para renderizar estados vacíos amigables en lugar de pantallas rotas.*
+> 
+> *Y finalmente, gobernamos el ciclo de vida mediante hooks: `useState` para el estado local, `useEffect` para sincronizaciones asíncronas con funciones de limpieza, y `useContext` para compartir datos globales como la sesión de usuario o el carrito de compras, tal como comprobamos en el proyecto **Moka & Canela**.*
+> 
+> *Nuestra interfaz ya es reactiva, pero necesita nutrirse de información viva externa. Caleb nos mostrará cómo consumir una API REST en tiempo real mediante fetch()."*
 
 ---
 
-### [2:30 - 3:00] 4. Dificultad Real, Lección Aprendida y Cierre
-> *"Si debo destacar una dificultad técnica real que enfrentamos, fue **desaprender la mutación directa de datos**. Al principio, la costumbre nos llevaba a usar `array.push()` o reasignar propiedades de objetos. En React, mutar el estado directamente rompe el algoritmo de comparación de referencias y la interfaz no se actualiza.*
-> 
-> *Aprender a utilizar el operador spread `[...array, nuevo]` y métodos funcionales puros no solo corrigió los bugs, sino que transformó nuestra mentalidad como ingenieros front end.*
-> 
-> *Muchas gracias. Quedo atento a las preguntas que deseen realizar."*
+### [8:05 - 8:25] Bloque 8: Buenas Prácticas y Dificultad Real Superada
+> *"Para cerrar, queremos reflexionar sobre la ingeniería de software aplicada. Mi mayor dificultad técnica fue **desaprender la mutación directa de datos**: al inicio usábamos `.push()` y la pantalla no se actualizaba porque la referencia en memoria no cambiaba. Dominar la inmutabilidad con el operador spread transformó nuestra forma de pensar en React."*
 
 ---
 
 ## 🧠 Banco de Preguntas del Profesor y Respuestas Sugeridas
 
-### Pregunta 1:
-**Profesor:** *¿Por qué en React insistimos tanto en que el estado debe ser inmutable y qué pasa por debajo si hago `gastos.push(nuevoGasto)`?*
-
+### Pregunta 1: ¿Por qué en React insistimos tanto en que el estado debe ser inmutable y qué pasa por debajo si hago `gastos.push(nuevoGasto)`?
 **Respuesta Sugerida:**
-> *"Excelente pregunta, profesor. React utiliza comparaciones superficiales de referencia en memoria a través de `Object.is` para determinar si el estado ha cambiado. Si hacemos `gastos.push()`, modificamos el contenido del arreglo, pero la referencia en memoria del arreglo sigue siendo exactamente la misma. Por lo tanto, React asume que no hubo ningún cambio y omite el ciclo de re-renderizado, dejando la interfaz congelada con datos desactualizados. Al usar `[...gastos, nuevoGasto]`, creamos una nueva referencia en memoria, lo que dispara de inmediato la reconciliación del Virtual DOM."*
+> *"React utiliza comparaciones superficiales de referencia en memoria a través de `Object.is` para determinar si el estado ha cambiado. Si hacemos `gastos.push()`, modificamos el contenido del arreglo, pero su referencia en memoria sigue siendo la misma. React asume que no hubo ningún cambio y omite el re-renderizado. Con `[...gastos, nuevoGasto]`, creamos una nueva referencia en memoria, lo que dispara de inmediato la reconciliación del Virtual DOM."*
 
 ---
 
-### Pregunta 2:
-**Profesor:** *¿Por qué es obligatorio asignar una prop `key` al usar `.map()` y por qué no es recomendable usar el índice (`index`) del arreglo como key si la lista cambia?*
-
+### Pregunta 2: ¿Por qué es obligatorio asignar una prop `key` al usar `.map()` y por qué no usar el índice numérico?
 **Respuesta Sugerida:**
-> *"La prop `key` es la etiqueta que le permite al algoritmo de reconciliación de React (Fiber) identificar qué nodo específico del árbol virtual fue añadido, eliminado o reordenado. Si usamos el índice numérico `index` y filtramos o eliminamos un elemento intermedio de la lista, los índices de todos los elementos posteriores cambian. Esto confunde a React, causando que preserve estados internos de componentes hijos o inputs en la posición equivocada. Siempre debemos usar identificadores únicos y estables, como un `id` proveniente de la base de datos o de la API."*
+> *"La prop `key` le permite a React identificar qué nodo específico del árbol virtual fue añadido, eliminado o reordenado. Si usamos el índice numérico y filtramos o eliminamos un elemento intermedio, los índices de todos los elementos posteriores cambian, provocando que React conserve estados internos de componentes hijos o inputs en la posición equivocada. Siempre debemos usar identificadores únicos y estables, como un `id`."*
 
 ---
 
-### Pregunta 3:
-**Profesor:** *¿Cuál es la diferencia entre probar una función pura y probar un componente con React Testing Library, tal como hicieron en el proyecto de Automatización Climática?*
-
+### Pregunta 3: ¿Cuál es la diferencia entre probar una función pura y probar un componente con React Testing Library?
 **Respuesta Sugerida:**
-> *"Una función pura —como el cálculo de balances o un filtro de datos— se prueba con pruebas unitarias tradicionales con Vitest o Jest: le pasamos datos de entrada y afirmamos con `expect().toBe()` que la salida matemática sea exacta, sin requerir navegador ni DOM.  
-> Por el contrario, en React Testing Library probamos componentes simulando el comportamiento real del usuario: renderizamos el componente en un DOM virtual con JSDOM y buscamos elementos por su rol accesible (`screen.getByRole('button')` o `screen.getByText()`), disparando eventos con `fireEvent` o `userEvent`. De este modo, si refactorizamos el código interno pero el usuario sigue viendo y haciendo lo mismo, el test sigue pasando sin romperse."*
+> *"Una función pura se prueba con pruebas unitarias tradicionales (Vitest o Jest): verificamos que para ciertas entradas numéricas o de datos, la salida sea matemáticamente exacta. En React Testing Library probamos componentes simulando el comportamiento real del usuario: renderizamos en un DOM virtual y buscamos elementos por su rol accesible (`screen.getByRole('button')`) o texto visible, asegurando que si refactorizamos el código interno sin alterar lo que el usuario ve, el test siga pasando."*
 
 ---
 
-### Pregunta 4:
-**Profesor:** *En el proyecto de Rutas Privadas, ¿qué problema de seguridad o de experiencia de usuario resolvieron con `PrivateRoutes` y `AuthContext`?*
-
+### Pregunta 4: En el proyecto de Rutas Privadas, ¿qué problema de seguridad o experiencia resolvieron con `PrivateRoutes` y `AuthContext`?
 **Respuesta Sugerida:**
-> *"Resolvimos dos problemas clave:  
-> Primero, la experiencia de usuario y seguridad: evitamos que un usuario no autenticado vea pantallas o datos que no le corresponden, interceptando la navegación antes de pintar la vista y redirigiéndolo con `<Navigate to="/login" replace />`.  
-> Segundo, la arquitectura de datos: al centralizar la sesión en `AuthContext`, evitamos tener que pasar el estado de autenticación manualmente a través de cada página o componente intermedio por props ('prop drilling'), haciendo el código mucho más limpio y mantenible."*
+> *"Evitamos exponer pantallas confidenciales a usuarios no autenticados interceptando la navegación antes de pintar la vista y redirigiendo hacia `/login`. Además, centralizar la sesión en `AuthContext` evita pasar el usuario a través de cada página intermedia por props ('prop drilling')."*

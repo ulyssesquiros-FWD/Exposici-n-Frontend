@@ -1,17 +1,26 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Code2, BookOpen, Layers, Users, Sparkles, Terminal } from 'lucide-react';
+import {
+  Code2,
+  BookOpen,
+  Layers,
+  Sparkles,
+  Globe,
+  Tv,
+  FileText
+} from 'lucide-react';
 
 export const Navbar = () => {
   const location = useLocation();
 
   const navLinks = [
     { path: '/', label: 'Inicio', icon: Sparkles },
-    { path: '/seccion/javascript', label: 'JavaScript & React (Ulysses)', icon: Code2, activeBadge: 'Listo' },
-    { path: '/seccion/ana', label: 'Estructura (Ana)', icon: Layers, badge: 'Pendiente' },
-    { path: '/seccion/caleb', label: 'Arquitectura (Caleb)', icon: Terminal, badge: 'Pendiente' },
-    { path: '/proyectos', label: 'Proyectos del Curso', icon: BookOpen },
-    { path: '/documentacion', label: 'Documentación', icon: Users },
+    { path: '/presentacion', label: 'Modo Presentación', icon: Tv, highlight: true },
+    { path: '/seccion/html-api', label: 'HTML & APIs (Caleb)', icon: Globe },
+    { path: '/seccion/css', label: 'CSS & Layouts (Ana)', icon: Layers },
+    { path: '/seccion/javascript', label: 'JS & React (Ulysses)', icon: Code2 },
+    { path: '/proyectos', label: 'Proyectos', icon: BookOpen },
+    { path: '/documentacion', label: 'Docs & Guiones', icon: FileText },
   ];
 
   return (
@@ -52,13 +61,13 @@ export const Navbar = () => {
               Exposición Front End
             </div>
             <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
-              JS • React • Arquitectura
+              HTML • CSS • JS • React • APIs
             </div>
           </div>
         </Link>
 
         {/* Enlaces de Navegación */}
-        <nav style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
+        <nav style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', flexWrap: 'wrap' }}>
           {navLinks.map((link) => {
             const Icon = link.icon;
             const isActive = location.pathname === link.path;
@@ -70,27 +79,37 @@ export const Navbar = () => {
                 style={{
                   display: 'flex',
                   alignItems: 'center',
-                  gap: '0.45rem',
-                  padding: '0.5rem 0.85rem',
+                  gap: '0.4rem',
+                  padding: '0.45rem 0.75rem',
                   borderRadius: 'var(--radius-md)',
-                  fontSize: '0.85rem',
+                  fontSize: '0.84rem',
                   fontWeight: 500,
-                  color: isActive ? '#ffffff' : 'var(--text-muted)',
-                  backgroundColor: isActive ? 'var(--bg-surface-elevated)' : 'transparent',
-                  border: isActive ? '1px solid var(--border-focus)' : '1px solid transparent',
+                  color: isActive
+                    ? '#ffffff'
+                    : link.highlight
+                    ? '#67e8f9'
+                    : 'var(--text-muted)',
+                  backgroundColor: isActive
+                    ? 'var(--bg-surface-elevated)'
+                    : link.highlight
+                    ? 'rgba(6, 182, 212, 0.1)'
+                    : 'transparent',
+                  border: isActive
+                    ? '1px solid var(--border-focus)'
+                    : link.highlight
+                    ? '1px solid rgba(6, 182, 212, 0.3)'
+                    : '1px solid transparent',
                   transition: 'all var(--transition-fast)',
                 }}
               >
-                <Icon size={16} color={isActive ? 'var(--accent-cyan)' : 'currentColor'} />
+                <Icon
+                  size={15}
+                  color={isActive ? 'var(--accent-cyan)' : link.highlight ? 'var(--accent-cyan)' : 'currentColor'}
+                />
                 <span>{link.label}</span>
-                {link.activeBadge && (
-                  <span className="badge badge-emerald" style={{ fontSize: '0.65rem', padding: '0.1rem 0.4rem' }}>
-                    {link.activeBadge}
-                  </span>
-                )}
-                {link.badge && (
-                  <span className="badge" style={{ fontSize: '0.65rem', padding: '0.1rem 0.4rem', backgroundColor: 'rgba(255,255,255,0.06)', color: 'var(--text-dim)' }}>
-                    {link.badge}
+                {link.highlight && !isActive && (
+                  <span className="badge badge-cyan" style={{ fontSize: '0.62rem', padding: '0.05rem 0.35rem' }}>
+                    9 min
                   </span>
                 )}
               </Link>
