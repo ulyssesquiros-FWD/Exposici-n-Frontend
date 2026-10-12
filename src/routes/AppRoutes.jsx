@@ -3,6 +3,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import { HomePage } from '../pages/HomePage';
 import { ProjectsMapPage } from '../pages/ProjectsMapPage';
 import { DocsViewerPage } from '../pages/DocsViewerPage';
+import JavaScriptSection from '../modules/ulysses/JavaScriptSection';
 import { SectionPlaceholder } from '../components/SectionPlaceholder';
 
 export const AppRoutes = () => {
@@ -10,30 +11,10 @@ export const AppRoutes = () => {
     <Routes>
       <Route path="/" element={<HomePage />} />
 
-      {/* Ruta para el módulo de Ulysses (Base inicial desacoplada) */}
-      <Route
-        path="/seccion/javascript"
-        element={
-          <SectionPlaceholder
-            author="Ulysses Quirós"
-            sectionTitle="JavaScript e Interactividad"
-            expectedBranch="feature/ulysses-javascript"
-            expectedModulePath="src/modules/ulysses/"
-            description="Espacio reservado para el módulo de JavaScript, interactividad y React de Ulysses. Se desarrollará en la rama feature/ulysses-javascript."
-            topics={[
-              'Variables y Operadores',
-              'Funciones y Scope',
-              '.map(), .filter() y Ternarios',
-              'DOM vs Virtual DOM',
-              'React Hooks (useState, useEffect, useContext)',
-              'Rutas Protegidas y LocalStorage',
-              'Testing con React Testing Library'
-            ]}
-          />
-        }
-      />
+      {/* Módulo de Ulysses integrado activamente en su rama feature/ulysses-javascript */}
+      <Route path="/seccion/javascript" element={<JavaScriptSection />} />
 
-      {/* Ruta para el módulo de Ana */}
+      {/* Marcador desacoplado para el módulo de Ana */}
       <Route
         path="/seccion/ana"
         element={
@@ -54,7 +35,7 @@ export const AppRoutes = () => {
         }
       />
 
-      {/* Ruta para el módulo de Caleb */}
+      {/* Marcador desacoplado para el módulo de Caleb */}
       <Route
         path="/seccion/caleb"
         element={
