@@ -31,17 +31,9 @@ export const HomePage = () => {
             </span>
           </div>
 
-          <h1 style={{
-            fontFamily: 'var(--font-display)',
-            fontSize: 'clamp(2.3rem, 5vw, 3.8rem)',
-            fontWeight: 800,
-            lineHeight: 1.15,
-            letterSpacing: '-0.03em',
-            marginBottom: '1.25rem',
-            maxWidth: '980px',
-            margin: '0 auto 1.25rem auto'
-          }}>
-            De la Estructura Web a una Interfaz Dinámica con <span className="gradient-accent-text">React y APIs</span>
+          <h1 className="home-hero__title">
+            <span>De la estructura web a una interfaz</span>
+            <span>dinámica con <span className="gradient-accent-text">React y APIs</span></span>
           </h1>
 
           <p style={{

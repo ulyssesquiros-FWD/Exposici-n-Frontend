@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import {
   Code2,
@@ -7,11 +7,14 @@ import {
   Sparkles,
   Globe,
   Tv,
-  FileText
+  FileText,
+  Menu,
+  X
 } from 'lucide-react';
 
 export const Navbar = () => {
   const location = useLocation();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
     { path: '/', label: 'Inicio', icon: Sparkles },
@@ -24,50 +27,39 @@ export const Navbar = () => {
   ];
 
   return (
-    <header style={{
-      position: 'sticky',
-      top: 0,
-      zIndex: 50,
-      backgroundColor: 'var(--bg-glass)',
-      backdropFilter: 'blur(16px)',
-      WebkitBackdropFilter: 'blur(16px)',
-      borderBottom: '1px solid var(--border-subtle)',
-    }}>
-      <div className="container" style={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        height: '4.5rem',
-      }}>
+    <header className="site-header">
+      <div className="container site-header__inner">
         {/* Logo / Marca */}
-        <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-          <div style={{
-            width: '2.5rem',
-            height: '2.5rem',
-            borderRadius: 'var(--radius-md)',
-            background: 'linear-gradient(135deg, var(--accent-primary), var(--accent-cyan))',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            color: '#fff',
-            fontWeight: 800,
-            fontSize: '1.2rem',
-            boxShadow: 'var(--shadow-glow)',
-          }}>
+        <Link to="/" className="site-brand" onClick={() => setIsMenuOpen(false)}>
+          <span className="site-brand__logo" aria-hidden="true">
             FE
-          </div>
-          <div>
-            <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '1.1rem', letterSpacing: '-0.02em' }}>
+          </span>
+          <span className="site-brand__copy">
+            <span className="site-brand__title">
               Exposición Front End
-            </div>
-            <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
+            </span>
+            <span className="site-brand__subtitle">
               HTML • CSS • JS • React • APIs
-            </div>
-          </div>
+            </span>
+          </span>
         </Link>
 
-        {/* Enlaces de Navegación */}
-        <nav style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', flexWrap: 'wrap' }}>
+        <button
+          className="site-menu-toggle"
+          type="button"
+          aria-label={isMenuOpen ? 'Cerrar menú de navegación' : 'Abrir menú de navegación'}
+          aria-expanded={isMenuOpen}
+          aria-controls="site-navigation"
+          onClick={() => setIsMenuOpen((open) => !open)}
+        >
+          {isMenuOpen ? <X size={21} /> : <Menu size={21} />}
+        </button>
+
+        <nav
+          className={`site-nav${isMenuOpen ? ' site-nav--open' : ''}`}
+          id="site-navigation"
+          aria-label="Navegación principal"
+        >
           {navLinks.map((link) => {
             const Icon = link.icon;
             const isActive = location.pathname === link.path;
@@ -76,31 +68,13 @@ export const Navbar = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '0.4rem',
-                  padding: '0.45rem 0.75rem',
-                  borderRadius: 'var(--radius-md)',
-                  fontSize: '0.84rem',
-                  fontWeight: 500,
-                  color: isActive
-                    ? '#ffffff'
-                    : link.highlight
-                    ? '#67e8f9'
-                    : 'var(--text-muted)',
-                  backgroundColor: isActive
-                    ? 'var(--bg-surface-elevated)'
-                    : link.highlight
-                    ? 'rgba(6, 182, 212, 0.1)'
-                    : 'transparent',
-                  border: isActive
-                    ? '1px solid var(--border-focus)'
-                    : link.highlight
-                    ? '1px solid rgba(6, 182, 212, 0.3)'
-                    : '1px solid transparent',
-                  transition: 'all var(--transition-fast)',
-                }}
+                className={[
+                  'site-nav__link',
+                  isActive && 'site-nav__link--active',
+                  link.highlight && 'site-nav__link--highlight',
+                ].filter(Boolean).join(' ')}
+                aria-current={isActive ? 'page' : undefined}
+                onClick={() => setIsMenuOpen(false)}
               >
                 <Icon
                   size={15}
@@ -108,7 +82,7 @@ export const Navbar = () => {
                 />
                 <span>{link.label}</span>
                 {link.highlight && !isActive && (
-                  <span className="badge badge-cyan" style={{ fontSize: '0.62rem', padding: '0.05rem 0.35rem' }}>
+                  <span className="badge badge-cyan site-nav__badge">
                     9 min
                   </span>
                 )}
