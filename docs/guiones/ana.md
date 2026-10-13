@@ -20,9 +20,7 @@
 ## 🎤 Intervenciones Palabra por Palabra
 
 ### [1:40 - 2:55] Bloque 3: CSS: Selectores, Cascada, Especificidad y Box Model
-*(Ana toma la palabra tras la sección de HTML y formularios de Caleb).*
-
-> *"Gracias, Caleb. Si HTML define qué significa el contenido, CSS describe cómo se presenta, se distribuye y se percibe.
+> *"Si HTML define qué significa el contenido, CSS describe cómo se presenta, se distribuye y se percibe.
 > 
 > Para estilizar con calidad, primero comprendemos el cálculo de reglas. Utilizamos selectores de elemento como `article` para etiquetas base, clases como `.card` para componentes reutilizables, e identificadores con `#` solo cuando se requiere unicidad. Cuando múltiples reglas entran en conflicto, el navegador aplica la cascada resolviendo por orden de importancia, especificidad —donde un ID supera a una clase y una clase a un elemento— y finalmente el orden de aparición en la hoja.
 > 
@@ -39,9 +37,7 @@
 > 
 > Y para garantizar que la interfaz se adapte a cualquier dispositivo, implementamos diseño responsivo con **media queries** (`@media`). Cuando el ancho de pantalla disminuye, nuestro layout colapsa de forma fluida a una sola columna, evitando desbordamientos horizontales de texto o controles.
 > 
-> Cuidamos especialmente la accesibilidad visual: no basta con el efecto `:hover` para quien usa mouse; implementamos un `:focus-visible` nítido para que cualquier usuario pueda navegar cómodamente usando el teclado con la tecla Tab.
-> 
-> Con la interfaz maquetada con elegancia y responsividad, Ulysses nos explicará cómo JavaScript y React dan dinamismo e interactividad a la aplicación frente a las acciones del usuario."*
+> Cuidamos especialmente la accesibilidad visual: no basta con el efecto `:hover` para quien usa mouse; implementamos un `:focus-visible` nítido para que cualquier usuario pueda navegar cómodamente usando el teclado con la tecla Tab."*
 
 ---
 

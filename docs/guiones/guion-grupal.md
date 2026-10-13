@@ -28,29 +28,25 @@
 > **Ulysses:**  
 > *"Buenos días profesor y compañeros. Sean bienvenidos a la exposición integradora de Front End de nuestro equipo, conformado por Ana, Caleb y mi persona, Ulysses Quirós.*
 > 
-> *A lo largo de este curso no aprendimos tecnologías aisladas, sino los eslabones de una misma cadena: cómo partir de una estructura semántica accesible en HTML, transformarla en una interfaz visualmente armónica y responsiva con CSS, darle dinamismo reactivo con JavaScript y React, y finalmente conectarla al mundo real consumiendo APIs REST asíncronas.*
-> 
-> *Para comenzar con el cimiento estructural de cualquier aplicación web, le cedo la palabra a mi compañero Caleb."*
+> *A lo largo de este curso no aprendimos tecnologías aisladas, sino los eslabones de una misma cadena: cómo partir de una estructura semántica accesible en HTML, transformarla en una interfaz visualmente armónica y responsiva con CSS, darle dinamismo reactivo con JavaScript y React, y finalmente conectarla al mundo real consumiendo APIs REST asíncronas."*
 
 ---
 
 ### [0:30 - 1:40] Bloque 2: HTML Semántico, Accesibilidad y Formularios (Caleb)
 > **Caleb:**  
-> *"Muchas gracias, Ulysses. Comenzamos por donde inicia todo proyecto web: el HTML semántico.*
+> *"Comenzamos por donde inicia todo proyecto web: el HTML semántico.*
 > 
 > *A menudo se comete el error de ver a HTML como un simple contenedor de etiquetas visuales. Pero en el desarrollo profesional, HTML es ante todo **significado y accesibilidad**. En nuestra aplicación respetamos rigurosamente el estándar HTML5: contamos con un único `<h1>` como encabezado principal y estructuramos las vistas utilizando `<header>`, `<nav>`, `<main>`, `<section>` y artículos autónomos con `<article>`.*
 > 
 > *Esta semántica tiene un impacto directo en la accesibilidad. Cuando implementamos formularios, vinculamos de manera obligatoria cada etiqueta `<label>` con su respectivo `<input>` mediante el atributo `htmlFor` e `id`. Esto permite que un usuario con discapacidad visual que utilice lectores de pantalla sepa con exactitud qué dato se espera recibir, aumentando además el área táctil de interacción.*
 > 
-> *Asimismo, aprovechamos la validación nativa del navegador con atributos como `required`, `type="email"` y longitudes mínimas, combinados con pseudoclases CSS `:valid` e `:invalid`, evitando librerías innecesarias y asegurando un manejo del DOM seguro sin `innerHTML` para prevenir vulnerabilidades XSS.*
-> 
-> *Ahora que tenemos una estructura accesible y semánticamente organizada, Ana nos demostrará cómo el CSS transforma esta base en una interfaz clara, bella y adaptable a cualquier pantalla."*
+> *Asimismo, aprovechamos la validación nativa del navegador con atributos como `required`, `type="email"` y longitudes mínimas, combinados con pseudoclases CSS `:valid` e `:invalid`, evitando librerías innecesarias y asegurando un manejo del DOM seguro sin `innerHTML` para prevenir vulnerabilidades XSS."*
 
 ---
 
 ### [1:40 - 2:55] Bloque 3: CSS: Selectores, Cascada, Especificidad y Box Model (Ana)
 > **Ana:**  
-> *"Gracias, Caleb. Si HTML define qué significa el contenido, CSS describe cómo se presenta, se distribuye y se percibe.*
+> *"Si HTML define qué significa el contenido, CSS describe cómo se presenta, se distribuye y se percibe.*
 > 
 > *Para estilizar con calidad, primero comprendemos el cálculo de reglas. Utilizamos selectores de elemento como `article` para etiquetas base, clases como `.card` para componentes reutilizables, e identificadores con `#` solo cuando se requiere unicidad. Cuando múltiples reglas entran en conflicto, el navegador aplica la cascada resolviendo por orden de importancia, especificidad —donde un ID supera a una clase y una clase a un elemento— y finalmente el orden de aparición en la hoja.*
 > 
@@ -68,15 +64,13 @@
 > 
 > *Y para garantizar que la interfaz se adapte a cualquier dispositivo, implementamos diseño responsivo con **media queries** (`@media`). Cuando el ancho de pantalla disminuye, nuestro layout colapsa de forma fluida a una sola columna, evitando desbordamientos horizontales de texto o controles.*
 > 
-> *Cuidamos especialmente la accesibilidad visual: no basta con el efecto `:hover` para quien usa mouse; implementamos un `:focus-visible` nítido para que cualquier usuario pueda navegar cómodamente usando el teclado con la tecla Tab.*
-> 
-> *Con la interfaz maquetada con elegancia y responsividad, Ulysses nos explicará cómo JavaScript y React dan dinamismo e interactividad a la aplicación frente a las acciones del usuario."*
+> *Cuidamos especialmente la accesibilidad visual: no basta con el efecto `:hover` para quien usa mouse; implementamos un `:focus-visible` nítido para que cualquier usuario pueda navegar cómodamente usando el teclado con la tecla Tab."*
 
 ---
 
 ### [4:10 - 5:30] Bloque 5: JavaScript: Variables, Funciones Puras y DOM (Ulysses)
 > **Ulysses:**  
-> *"Muchas gracias, Ana. Llegamos al motor de la interactividad: JavaScript moderno.*
+> *"Llegamos al motor de la interactividad: JavaScript moderno.*
 > 
 > *Para construir aplicaciones sólidas, desterramos el uso de `var` y adoptamos `const` para referencias inmutables y `let` para bloques de alcance estricto. Pero el verdadero salto cualitativo ocurre al adoptar la **programación funcional**: trabajamos con funciones puras que, ante los mismos argumentos, siempre retornan la misma salida sin generar efectos secundarios.*
 > 
@@ -94,15 +88,13 @@
 > 
 > *Si una búsqueda no arroja resultados, usamos operadores ternarios (`condicion ? <Exito /> : <Vacio />`) para renderizar estados vacíos amigables en lugar de pantallas rotas.*
 > 
-> *Y finalmente, gobernamos el ciclo de vida mediante hooks: `useState` para el estado local, `useEffect` para sincronizaciones asíncronas con funciones de limpieza, y `useContext` para compartir datos globales como la sesión de usuario o el carrito de compras, tal como comprobamos en el proyecto **Moka & Canela**.*
-> 
-> *Nuestra interfaz ya es reactiva, pero necesita nutrirse de información viva externa. Caleb nos mostrará cómo consumir una API REST en tiempo real mediante fetch()."*
+> *Y finalmente, gobernamos el ciclo de vida mediante hooks: `useState` para el estado local, `useEffect` para sincronizaciones asíncronas con funciones de limpieza, y `useContext` para compartir datos globales como la sesión de usuario o el carrito de compras, tal como comprobamos en el proyecto **Moka & Canela**."*
 
 ---
 
 ### [6:40 - 8:05] Bloque 7: Consumo de APIs con fetch() y Manejo de Errores (Caleb)
 > **Caleb:**  
-> *"Gracias, Ulysses. Ahora conectamos nuestra interfaz con el mundo exterior.*
+> *"Ahora conectamos nuestra interfaz con el mundo exterior.*
 > 
 > *En este módulo nos comunicamos con una API REST real. Aplicamos separación de responsabilidades: aislamos las llamadas de red en el servicio `calebApiService.js`, dejando los componentes de React limpios y enfocados en la experiencia del usuario.*
 > 
@@ -113,9 +105,7 @@
 > 
 > *Una lección técnica crucial fue comprender que **fetch() no rechaza la promesa ante un error HTTP 404 o 500**. Si el servidor responde con recurso no encontrado, para fetch la petición fue exitosa a nivel de transporte. Por ello, es mandatorio evaluar `if (!response.ok)` para lanzar explícitamente una excepción.*
 > 
-> *Esto contrasta con lo aprendido en **Postman**: mientras en Postman probamos endpoints de forma aislada sin usuarios, en React debemos prevenir fugas de memoria (*memory leaks*) utilizando `AbortController` para cancelar peticiones pendientes si el usuario cambia de página antes de recibir la respuesta.*
-> 
-> *Ahora los tres expositores nos reunimos para el cierre y las lecciones aprendidas."*
+> *Esto contrasta con lo aprendido en **Postman**: mientras en Postman probamos endpoints de forma aislada sin usuarios, en React debemos prevenir fugas de memoria (*memory leaks*) utilizando `AbortController` para cancelar peticiones pendientes si el usuario cambia de página antes de recibir la respuesta."*
 
 ---
 

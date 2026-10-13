@@ -165,7 +165,7 @@ export const DocsViewerPage = () => {
 
               <div style={{ backgroundColor: 'rgba(0,0,0,0.25)', padding: '1.25rem', borderRadius: 'var(--radius-md)', borderLeft: '4px solid #22d3ee' }}>
                 <strong style={{ color: '#ffffff' }}>[0:30 - 1:40] 2. HTML Semántico, Accesibilidad y Formularios (Caleb - 1:10)</strong><br />
-                Jerarquía con único <code>&lt;h1&gt;</code>, etiquetas semánticas, vínculo obligatorio <code>htmlFor</code> en labels, validación nativa del navegador y prevención de XSS evitando <code>innerHTML</code>. Transición verbal a Ana.
+                Jerarquía con único <code>&lt;h1&gt;</code>, etiquetas semánticas, vínculo obligatorio <code>htmlFor</code> en labels, validación nativa del navegador y prevención de XSS evitando <code>innerHTML</code>.
               </div>
 
               <div style={{ backgroundColor: 'rgba(0,0,0,0.25)', padding: '1.25rem', borderRadius: 'var(--radius-md)', borderLeft: '4px solid #f472b6' }}>
@@ -175,7 +175,7 @@ export const DocsViewerPage = () => {
 
               <div style={{ backgroundColor: 'rgba(0,0,0,0.25)', padding: '1.25rem', borderRadius: 'var(--radius-md)', borderLeft: '4px solid #f472b6' }}>
                 <strong style={{ color: '#ffffff' }}>[2:55 - 4:10] 4. CSS: Flexbox, CSS Grid y Responsividad (Ana - 1:15)</strong><br />
-                Comparativa Flexbox (1D) vs CSS Grid (2D), media queries para pantallas estrechas y accesibilidad visual con <code>:focus-visible</code> para navegación por teclado. Transición verbal a Ulysses.
+                Comparativa Flexbox (1D) vs CSS Grid (2D), media queries para pantallas estrechas y accesibilidad visual con <code>:focus-visible</code> para navegación por teclado.
               </div>
 
               <div style={{ backgroundColor: 'rgba(0,0,0,0.25)', padding: '1.25rem', borderRadius: 'var(--radius-md)', borderLeft: '4px solid var(--accent-primary)' }}>
@@ -185,7 +185,7 @@ export const DocsViewerPage = () => {
 
               <div style={{ backgroundColor: 'rgba(0,0,0,0.25)', padding: '1.25rem', borderRadius: 'var(--radius-md)', borderLeft: '4px solid var(--accent-primary)' }}>
                 <strong style={{ color: '#ffffff' }}>[5:30 - 6:40] 6. React: Componentes, Estado, .map() y Hooks (Ulysses - 1:10)</strong><br />
-                Modelo declarativo <code>UI = f(State)</code>, proyección con <code>.map()</code> y keys estables, ternarios para estados vacíos y hooks <code>useState</code>, <code>useEffect</code> y <code>useContext</code>. Transición verbal a Caleb.
+                Modelo declarativo <code>UI = f(State)</code>, proyección con <code>.map()</code> y keys estables, ternarios para estados vacíos y hooks <code>useState</code>, <code>useEffect</code> y <code>useContext</code>.
               </div>
 
               <div style={{ backgroundColor: 'rgba(0,0,0,0.25)', padding: '1.25rem', borderRadius: 'var(--radius-md)', borderLeft: '4px solid #22d3ee' }}>
@@ -212,7 +212,7 @@ export const DocsViewerPage = () => {
             </div>
 
             <p style={{ color: 'var(--text-muted)', fontSize: '0.92rem', lineHeight: 1.7, marginBottom: '1.5rem' }}>
-              Este documento guía la presentación digital en pantalla. Describe los puntos visuales que acompañan a cada expositor, los fragmentos de código proyectados y las transiciones verbales directas para no perder fluidez ante el profesor.
+              Este documento guía la presentación digital en pantalla. Describe los puntos visuales que acompañan a cada expositor y los fragmentos de código proyectados para cada diapositiva.
             </p>
 
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem' }}>

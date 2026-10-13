@@ -20,24 +20,18 @@
 ## 🎤 Intervenciones Palabra por Palabra
 
 ### [0:30 - 1:40] Bloque 2: HTML Semántico, Accesibilidad y Formularios Nativos
-*(Caleb toma la palabra tras la apertura de Ulysses).*
-
-> *"Muchas gracias, Ulysses. Comenzamos por donde inicia todo proyecto web: el HTML semántico.
+> *"Comenzamos por donde inicia todo proyecto web: el HTML semántico.
 > 
 > A menudo se comete el error de ver a HTML como un simple contenedor de etiquetas visuales. Pero en el desarrollo profesional, HTML es ante todo **significado y accesibilidad**. En nuestra aplicación respetamos rigurosamente el estándar HTML5: contamos con un único `<h1>` como encabezado principal y estructuramos las vistas utilizando `<header>`, `<nav>`, `<main>`, `<section>` y artículos autónomos con `<article>`.
 > 
 > Esta semántica tiene un impacto directo en la accesibilidad. Cuando implementamos formularios, vinculamos de manera obligatoria cada etiqueta `<label>` con su respectivo `<input>` mediante el atributo `htmlFor` e `id`. Esto permite que un usuario con discapacidad visual que utilice lectores de pantalla sepa con exactitud qué dato se espera recibir, aumentando además el área táctil de interacción.
 > 
-> Asimismo, aprovechamos la validación nativa del navegador con atributos como `required`, `type="email"` y longitudes mínimas, combinados con pseudoclases CSS `:valid` e `:invalid`, evitando librerías innecesarias y asegurando un manejo del DOM seguro sin `innerHTML` para prevenir vulnerabilidades XSS.
-> 
-> Ahora que tenemos una estructura accesible y semánticamente organizada, Ana nos demostrará cómo el CSS transforma esta base en una interfaz clara, bella y adaptable a cualquier pantalla."*
+> Asimismo, aprovechamos la validación nativa del navegador con atributos como `required`, `type="email"` y longitudes mínimas, combinados con pseudoclases CSS `:valid` e `:invalid`, evitando librerías innecesarias y asegurando un manejo del DOM seguro sin `innerHTML` para prevenir vulnerabilidades XSS."*
 
 ---
 
 ### [6:40 - 8:05] Bloque 7: Consumo de APIs con fetch() y Manejo de Errores
-*(Caleb retoma la palabra tras el bloque de React de Ulysses).*
-
-> *"Gracias, Ulysses. Ahora conectamos nuestra interfaz con el mundo exterior.
+> *"Ahora conectamos nuestra interfaz con el mundo exterior.
 > 
 > En este módulo nos comunicamos con una API REST real. Aplicamos separación de responsabilidades: aislamos las llamadas de red en el servicio `calebApiService.js`, dejando los componentes de React limpios y enfocados en la experiencia del usuario.
 > 
@@ -48,9 +42,7 @@
 > 
 > Una lección técnica crucial fue comprender que **fetch() no rechaza la promesa ante un error HTTP 404 o 500**. Si el servidor responde con recurso no encontrado, para fetch la petición fue exitosa a nivel de transporte. Por ello, es mandatorio evaluar `if (!response.ok)` para lanzar explícitamente una excepción.
 > 
-> Esto contrasta con lo aprendido en **Postman**: mientras en Postman probamos endpoints de forma aislada sin usuarios, en React debemos prevenir fugas de memoria (*memory leaks*) utilizando `AbortController` para cancelar peticiones pendientes si el usuario cambia de página antes de recibir la respuesta.
-> 
-> Ahora los tres expositores nos reunimos para el cierre y las lecciones aprendidas."*
+> Esto contrasta con lo aprendido en **Postman**: mientras en Postman probamos endpoints de forma aislada sin usuarios, en React debemos prevenir fugas de memoria (*memory leaks*) utilizando `AbortController` para cancelar peticiones pendientes si el usuario cambia de página antes de recibir la respuesta."*
 
 ---
 

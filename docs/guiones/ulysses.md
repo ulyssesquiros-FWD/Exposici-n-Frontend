@@ -23,16 +23,12 @@
 ### [0:00 - 0:30] Bloque 1: Apertura y Objetivo Común
 > *"Buenos días profesor y compañeros. Sean bienvenidos a la exposición integradora de Front End de nuestro equipo, conformado por Ana, Caleb y mi persona, Ulysses Quirós.*
 > 
-> *A lo largo de este curso no aprendimos tecnologías aisladas, sino los eslabones de una misma cadena: cómo partir de una estructura semántica accesible en HTML, transformarla en una interfaz visualmente armónica y responsiva con CSS, darle dinamismo reactivo con JavaScript y React, y finalmente conectarla al mundo real consumiendo APIs REST asíncronas.*
-> 
-> *Para comenzar con el cimiento estructural de cualquier aplicación web, le cedo la palabra a mi compañero Caleb."*
+> *A lo largo de este curso no aprendimos tecnologías aisladas, sino los eslabones de una misma cadena: cómo partir de una estructura semántica accesible en HTML, transformarla en una interfaz visualmente armónica y responsiva con CSS, darle dinamismo reactivo con JavaScript y React, y finalmente conectarla al mundo real consumiendo APIs REST asíncronas."*
 
 ---
 
 ### [4:10 - 5:30] Bloque 5: JavaScript: Variables, Funciones Puras y DOM
-*(Ulysses retoma la palabra tras la sección de CSS de Ana).*
-
-> *"Muchas gracias, Ana. Llegamos al motor de la interactividad: JavaScript moderno.*
+> *"Llegamos al motor de la interactividad: JavaScript moderno.*
 > 
 > *Para construir aplicaciones sólidas, desterramos el uso de `var` y adoptamos `const` para referencias inmutables y `let` para bloques de alcance estricto. Pero el verdadero salto cualitativo ocurre al adoptar la **programación funcional**: trabajamos con funciones puras que, ante los mismos argumentos, siempre retornan la misma salida sin generar efectos secundarios.*
 > 
@@ -49,9 +45,7 @@
 > 
 > *Si una búsqueda no arroja resultados, usamos operadores ternarios (`condicion ? <Exito /> : <Vacio />`) para renderizar estados vacíos amigables en lugar de pantallas rotas.*
 > 
-> *Y finalmente, gobernamos el ciclo de vida mediante hooks: `useState` para el estado local, `useEffect` para sincronizaciones asíncronas con funciones de limpieza, y `useContext` para compartir datos globales como la sesión de usuario o el carrito de compras, tal como comprobamos en el proyecto **Moka & Canela**.*
-> 
-> *Nuestra interfaz ya es reactiva, pero necesita nutrirse de información viva externa. Caleb nos mostrará cómo consumir una API REST en tiempo real mediante fetch()."*
+> *Y finalmente, gobernamos el ciclo de vida mediante hooks: `useState` para el estado local, `useEffect` para sincronizaciones asíncronas con funciones de limpieza, y `useContext` para compartir datos globales como la sesión de usuario o el carrito de compras, tal como comprobamos en el proyecto **Moka & Canela**."*
 
 ---
 

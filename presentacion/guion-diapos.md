@@ -9,16 +9,16 @@
 
 ## 🗺️ Mapa General de la Presentación
 
-| # | Diapositiva | Expositor | Tiempo | Enfoque Principal | Transición Hacia |
-|---|-------------|-----------|--------|-------------------|------------------|
-| **1** | De la Estructura a la Interfaz Dinámica | **Ulysses** | `0:30` | Apertura, equipo y objetivo común | Caleb (HTML) |
-| **2** | HTML Semántico, Accesibilidad y Formularios | **Caleb** | `1:10` | Semántica, A11y, formularios y validación | Ana (CSS Fundamentos) |
-| **3** | CSS: Selectores, Cascada y Box Model | **Ana** | `1:15` | Especificidad, reglas, 4 capas del Box Model | Ana (Layouts & Responsividad) |
-| **4** | CSS: Flexbox, CSS Grid y Responsividad | **Ana** | `1:15` | Layouts 1D y 2D, media queries y foco | Ulysses (JavaScript) |
-| **5** | JavaScript: Variables, Funciones Puras y DOM | **Ulysses** | `1:20` | Sintaxis moderna, inmutabilidad y eventos | Ulysses (React) |
-| **6** | React: Componentes, Estado y Hooks | **Ulysses** | `1:10` | Modelo declarativo, .map(), ternarios y hooks | Caleb (APIs) |
-| **7** | Consumo de APIs: Fetch(), JSON y Errores | **Caleb** | `1:25` | Estados asíncronos, response.ok y Postman | Equipo (Cierre) |
-| **8** | Buenas Prácticas y Reflexión Final | **Los Tres** | `1:00` | Aprendizajes, dificultades reales y cierre | Preguntas del Profesor |
+| # | Diapositiva | Expositor | Tiempo | Enfoque Principal |
+|---|-------------|-----------|--------|-------------------|
+| **1** | De la Estructura a la Interfaz Dinámica | **Ulysses** | `0:30` | Apertura, equipo y objetivo común |
+| **2** | HTML Semántico, Accesibilidad y Formularios | **Caleb** | `1:10` | Semántica, A11y, formularios y validación |
+| **3** | CSS: Selectores, Cascada y Box Model | **Ana** | `1:15` | Especificidad, reglas, 4 capas del Box Model |
+| **4** | CSS: Flexbox, CSS Grid y Responsividad | **Ana** | `1:15` | Layouts 1D y 2D, media queries y foco |
+| **5** | JavaScript: Variables, Funciones Puras y DOM | **Ulysses** | `1:20` | Sintaxis moderna, inmutabilidad y eventos |
+| **6** | React: Componentes, Estado y Hooks | **Ulysses** | `1:10` | Modelo declarativo, .map(), ternarios y hooks |
+| **7** | Consumo de APIs: Fetch(), JSON y Errores | **Caleb** | `1:25` | Estados asíncronos, response.ok y Postman |
+| **8** | Buenas Prácticas y Reflexión Final | **Los Tres** | `1:00` | Aprendizajes, dificultades reales y cierre |
 
 ---
 
@@ -31,8 +31,8 @@
 * **Puntos a verbalizar:**
   - Saludo formal al profesor y compañeros.
   - Presentación del equipo y de las responsabilidades asignadas.
-  - El concepto narrativo unificado: no mostraremos tres temas aislados, sino la evolución natural de una aplicación web: desde la estructura semántica inicial hasta una interfaz reactiva conectada a una API externa.
-  - Tiempo total de 9 minutos.
+  - El concepto narrativo unificado: evolución natural de una aplicación web desde la estructura semántica inicial hasta una interfaz reactiva conectada a una API externa.
+  - Tiempo total estimado de 9 minutos.
 * **Código en pantalla:**
   ```javascript
   const WebApp = {
@@ -43,8 +43,6 @@
     datos:        "Consumo Asíncrono de APIs REST con fetch()"
   };
   ```
-* **Transición verbal de salida:**  
-  > *"Para entender esta evolución, debemos comenzar por la base fundamental: Caleb nos explicará cómo HTML estructura el contenido con significado y accesibilidad."*
 
 ---
 
@@ -66,8 +64,6 @@
     <input id="titulo-post" name="title" type="text" required minlength="5" />
   </form>
   ```
-* **Transición verbal de salida:**  
-  > *"Ahora que tenemos una estructura accesible y semánticamente organizada, Ana nos demostrará cómo el CSS transforma esta base en una interfaz clara, hermosa y adaptable a cualquier pantalla."*
 
 ---
 
@@ -93,8 +89,6 @@
     padding: 1.25rem;   /* Relleno interno */
   }
   ```
-* **Transición verbal de salida:**  
-  > *"Una vez dominadas las capas de cada caja individual, el reto es organizarlas en conjunto: pasemos a las distribuciones modernas con Flexbox y CSS Grid."*
 
 ---
 
@@ -120,8 +114,6 @@
     }
   }
   ```
-* **Transición verbal de salida:**  
-  > *"Con la interfaz maquetada con elegancia y responsividad, Ulysses nos explicará cómo JavaScript y React dan dinamismo e interactividad a la aplicación frente a las acciones del usuario."*
 
 ---
 
@@ -145,8 +137,6 @@
     return [...gastos, nuevo];
   };
   ```
-* **Transición verbal de salida:**  
-  > *"Esta inmutabilidad funcional es el requisito esencial que permite a React calcular qué cambió en la interfaz y actualizar la pantalla de forma declarativa."*
 
 ---
 
@@ -173,8 +163,6 @@
     </div>
   );
   ```
-* **Transición verbal de salida:**  
-  > *"Nuestra interfaz ya es reactiva y responde al usuario, pero necesita datos vivos para ser útil. Caleb nos mostrará cómo conectamos una API REST en tiempo real mediante fetch()."*
 
 ---
 
@@ -187,7 +175,6 @@
   - Manejo de los tres estados asíncronos: carga (`loading`), éxito con datos (`success`) y errores de red (`error`).
   - La trampa de `fetch()`: no arroja error ante códigos HTTP 404 o 500; validamos obligatoriamente `response.ok`.
   - Prevención de fugas de memoria con `AbortController` si el usuario abandona la página antes de que termine la petición.
-  - Demostración compartida en vivo: cómo los datos obtenidos por Caleb se maquetan con las tarjetas CSS de Ana y se filtran con el estado React de Ulysses.
 * **Código en pantalla:**
   ```javascript
   export async function getPosts(limit = 5, { signal } = {}) {
@@ -198,8 +185,6 @@
     return await response.json();
   }
   ```
-* **Transición verbal de salida:**  
-  > *"Para concluir nuestra presentación, los tres expositores compartiremos las buenas prácticas aplicadas, las dificultades reales del curso y nuestras conclusiones."*
 
 ---
 
@@ -221,5 +206,3 @@
     "Git Colaborativo: Arquitectura modular sin colisiones"
   ];
   ```
-* **Cierre grupal:**  
-  > *"Muchas gracias profesor y compañeros por su atención. Abrimos el espacio para sus preguntas."*

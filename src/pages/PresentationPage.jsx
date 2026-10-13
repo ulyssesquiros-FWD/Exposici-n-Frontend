@@ -7,20 +7,8 @@ import {
   User,
   ExternalLink,
   Sparkles,
-  Layers,
-  Code2,
-  Globe,
-  CheckCircle2,
-  ShieldCheck,
-  Zap,
-  Play,
-  RotateCcw,
-  Search,
-  Check,
-  AlertTriangle,
-  Users
+  CheckCircle2
 } from 'lucide-react';
-import { getPosts } from '../services/calebApiService';
 import './PresentationPage.css';
 
 const SLIDES = [
@@ -47,8 +35,7 @@ const WebApp = {
   logica:       "JavaScript ES6+, Funciones Puras e Inmutabilidad",
   reactividad:  "React 19, Componentes, Hooks y Estado",
   datos:        "Consumo Asíncrono de APIs REST con fetch()"
-};`,
-    transicion: 'Ulysses da la bienvenida y da paso a Caleb: "Iniciamos con el cimiento de cualquier aplicación: Caleb nos explicará cómo HTML otorga significado estructural y accesibilidad a la información."'
+};`
   },
   {
     id: 2,
@@ -79,8 +66,7 @@ const WebApp = {
     minlength="5" 
     aria-required="true"
   />
-</form>`,
-    transicion: 'Caleb conecta con Ana: "Ahora que tenemos una estructura con significado semántico y accesible, Ana nos demostrará cómo el CSS transforma esta base en una interfaz clara, bella y adaptable a cualquier dispositivo."'
+</form>`
   },
   {
     id: 3,
@@ -107,8 +93,7 @@ article { color: #dbeafe; }       /* Elemento: (0,0,1) */
   margin: 1rem;       /* Espacio exterior entre cajas */
   border: 1px solid;  /* Frontera delimitadora */
   padding: 1.25rem;   /* Relleno interno al contenido */
-}`,
-    transicion: 'Ana profundiza hacia las distribuciones modernas: "Entendido el modelo de caja, pasamos a cómo organizamos múltiples cajas en la pantalla con Flexbox y CSS Grid."'
+}`
   },
   {
     id: 4,
@@ -137,8 +122,7 @@ article { color: #dbeafe; }       /* Elemento: (0,0,1) */
   .grid-container {
     grid-template-columns: 1fr; /* Colapsa a 1 columna */
   }
-}`,
-    transicion: 'Ana cede la palabra a Ulysses: "Con el contenido maquetado de forma atractiva y responsiva, Ulysses nos explicará cómo JavaScript y React dotan de dinamismo e interactividad a la interfaz frente a las acciones del usuario."'
+}`
   },
   {
     id: 5,
@@ -162,8 +146,7 @@ gastos.push(nuevoGasto); // Rompe la reactividad
 // ✅ Buena práctica: Función pura e inmutabilidad
 export const agregarGastoInmutable = (gastos, nuevo) => {
   return [...gastos, nuevo]; // Nueva referencia en memoria
-};`,
-    transicion: 'Ulysses avanza hacia React: "Esta inmutabilidad funcional es el prerrequisito matemático que permite a React calcular qué cambió en la interfaz de forma declarativa."'
+};`
   },
   {
     id: 6,
@@ -192,8 +175,7 @@ return (
       filtrados.map(item => <Tarjeta key={item.id} {...item} />)
     )}
   </div>
-);`,
-    transicion: 'Ulysses cede la palabra a Caleb: "Nuestra interfaz ya es reactiva, pero para resolver problemas reales necesita conectarse con el exterior. Caleb nos mostrará cómo consumir una API REST en vivo mediante fetch()."'
+);`
   },
   {
     id: 7,
@@ -220,8 +202,7 @@ export async function getPosts(limit = 5, { signal } = {}) {
     throw new Error(\`Error HTTP \${response.status}: Respuesta fallida\`);
   }
   return await response.json();
-}`,
-    transicion: 'Caleb invita al equipo completo: "Para finalizar, los tres expositores compartiremos las buenas prácticas de ingeniería, las dificultades reales del curso y las lecciones aprendidas."'
+}`
   },
   {
     id: 8,
@@ -247,19 +228,12 @@ const LeccionesAprendidas = [
   "JavaScript & React: La inmutabilidad garantiza predictibilidad",
   "APIs REST: Manejo defensivo de errores y cancelación de peticiones",
   "Git & Colaboración: Arquitecturas modulares evitan conflictos"
-];`,
-    transicion: 'Cierre grupal: "Muchas gracias profesor y compañeros por su atención. Quedamos a su entera disposición para responder cualquier pregunta técnica."'
+];`
   }
 ];
 
 export const PresentationPage = () => {
   const [slideActual, setSlideActual] = useState(0);
-
-  // Estados para la demostración compartida (Pipeline Común: API -> CSS -> React Filter)
-  const [demoPosts, setDemoPosts] = useState([]);
-  const [cargandoDemo, setCargandoDemo] = useState(false);
-  const [filtroDemo, setFiltroDemo] = useState('');
-  const [errorDemo, setErrorDemo] = useState(null);
 
   const slide = SLIDES[slideActual];
 
@@ -294,25 +268,6 @@ export const PresentationPage = () => {
       setSlideActual(prev => prev - 1);
     }
   };
-
-  // Carga de la demostración compartida cuando se está en la diapositiva 7 u 8
-  const cargarDemoCompartida = async () => {
-    setCargandoDemo(true);
-    setErrorDemo(null);
-    try {
-      const data = await getPosts(4);
-      setDemoPosts(data);
-    } catch (err) {
-      setErrorDemo(err.message);
-    } finally {
-      setCargandoDemo(false);
-    }
-  };
-
-  const demoFiltrada = demoPosts.filter(p =>
-    p.title.toLowerCase().includes(filtroDemo.toLowerCase()) ||
-    p.body.toLowerCase().includes(filtroDemo.toLowerCase())
-  );
 
   return (
     <div className="presentation-container animate-fade-in">
@@ -366,7 +321,7 @@ export const PresentationPage = () => {
         <h1 className="slide-title">{slide.titulo}</h1>
         <p className="slide-subtitle">{slide.subtitulo}</p>
 
-        {/* Cuerpo en dos columnas (Puntos Clave + Código o Demo) */}
+        {/* Cuerpo en dos columnas (Puntos Clave + Código Didáctico) */}
         <div className="slide-body-grid">
           {/* Columna Izquierda: Puntos clave pedagógicos */}
           <div className="slide-concept-box">
@@ -394,88 +349,6 @@ export const PresentationPage = () => {
               <code>{slide.codigoSnippet}</code>
             </pre>
           </div>
-        </div>
-
-        {/* Demostración Compartida en Vivo (En Diapositivas 7 y 8) */}
-        {(slide.id === 7 || slide.id === 8) && (
-          <div className="shared-pipeline-card animate-fade-in">
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.75rem' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <Zap size={16} color="var(--accent-amber)" />
-                <strong style={{ fontSize: '0.92rem', color: '#fcd34d' }}>
-                  Demostración Compartida del Trío (Pipeline en Vivo):
-                </strong>
-                <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>
-                  Caleb (fetch API) → Ana (Card CSS/Grid) → Ulysses (Filtro React)
-                </span>
-              </div>
-
-              <button
-                onClick={cargarDemoCompartida}
-                disabled={cargandoDemo}
-                className="btn-primary"
-                style={{ fontSize: '0.8rem', padding: '0.4rem 0.85rem' }}
-              >
-                <Play size={14} /> {cargandoDemo ? 'Consultando API...' : 'Cargar Datos Reales en Vivo'}
-              </button>
-            </div>
-
-            {demoPosts.length > 0 && (
-              <div>
-                <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', marginBottom: '0.75rem' }}>
-                  <Search size={14} color="var(--text-dim)" />
-                  <input
-                    type="text"
-                    placeholder="Filtrar resultados obtenidos en tiempo real (Interacción Ulysses)..."
-                    value={filtroDemo}
-                    onChange={(e) => setFiltroDemo(e.target.value)}
-                    style={{
-                      backgroundColor: 'var(--bg-primary)',
-                      border: '1px solid var(--border-subtle)',
-                      borderRadius: 'var(--radius-sm)',
-                      padding: '0.4rem 0.75rem',
-                      color: '#ffffff',
-                      fontSize: '0.82rem',
-                      flex: 1
-                    }}
-                  />
-                  <span style={{ fontSize: '0.75rem', color: 'var(--text-dim)' }}>
-                    {demoFiltrada.length} tarjetas
-                  </span>
-                </div>
-
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '0.75rem' }}>
-                  {demoFiltrada.map(post => (
-                    <div key={post.id} style={{
-                      backgroundColor: 'rgba(17, 24, 39, 0.9)',
-                      border: '1px solid rgba(255, 255, 255, 0.1)',
-                      borderRadius: 'var(--radius-sm)',
-                      padding: '0.75rem',
-                      fontSize: '0.78rem'
-                    }}>
-                      <div style={{ fontWeight: 700, color: '#38bdf8', marginBottom: '0.25rem', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                        #{post.id} {post.title}
-                      </div>
-                      <p style={{ color: 'var(--text-muted)', fontSize: '0.74rem', lineHeight: 1.4, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
-                        {post.body}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {errorDemo && (
-              <div style={{ color: '#f87171', fontSize: '0.8rem', marginTop: '0.5rem' }}>
-                Fallo al consultar: {errorDemo}
-              </div>
-            )}
-          </div>
-        )}
-
-        {/* Transición Verbal al siguiente Expositor */}
-        <div className="slide-transition-callout">
-          <strong>🗣️ Transición Verbal del Expositor:</strong> {slide.transicion}
         </div>
       </div>
 
